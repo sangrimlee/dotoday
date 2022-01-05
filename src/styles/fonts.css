@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900');
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 800;
+  src: local('Gilroy') url(../assets/fonts//Gilroy.woff2) format('woff2'),
+    url(../assets//fonts/Gilroy.woff) format('woff'),
+    url(../assets/fonts/Gilroy.otf), format('otf'),
+    url(../assets/fonts/Gilroy.ttf), format('truetype');
+}

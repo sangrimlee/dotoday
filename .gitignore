@@ -141,3 +141,10 @@ node_modules
 psd
 thumb
 sketch
+
+
+# Fonts
+*.otf
+*.ttf
+*.woff
+*.woff2

@@ -1,3 +1,11 @@
+@import url(./fonts.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .logo {
+    @apply font-logo font-extrabold tracking-tight;
+  }
+}
