@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -29,6 +30,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [
+    new Dotenv({
+      path: isProduction ? '.env.production' : '.env.development',
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: isProduction ? '[contenthash:8].css' : 'styles.css',
