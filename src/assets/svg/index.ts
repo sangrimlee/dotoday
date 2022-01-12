@@ -1,2 +1,9 @@
 export { default as LogoLightIcon } from './logo-light.svg';
 export { default as LogoDarkIcon } from './logo-dark.svg';
+export { default as GoogleLogoIcon } from './google-logo.svg';
+export { default as MailIcon } from './mail.svg';
+export { default as UserIcon } from './user.svg';
+export { default as LockIcon } from './lock.svg';
+export { default as LoadingIcon } from './loading.svg';
+export { default as AlertCircleIcon } from './alert-circle.svg';
+export { default as DocIcon } from './doc.svg';

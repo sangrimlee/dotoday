@@ -1,11 +1,24 @@
 import React from 'react';
 
-interface LoginPageProps {}
+import { PAGE_URL } from '@/constants/url';
+import { AuthLayout } from '@/components/layouts/AuthLayout';
+import { LinkButton } from '@/components/shared/LinkButton';
+import { GoogleLoginButton } from '@/components/shared/OAuth';
 
-export default function LoginPage({}: LoginPageProps) {
+export default function LoginPage() {
   return (
-    <div>
-      <h1>LoginPage</h1>
-    </div>
+    <AuthLayout title="로그인">
+      <div className="grid gap-y-4">
+        <LinkButton
+          buttonType="fullWidth"
+          icon="MailIcon"
+          iconColor="BRAND"
+          to={PAGE_URL.EMAIL_LOGIN}
+        >
+          이메일로 로그인
+        </LinkButton>
+        <GoogleLoginButton />
+      </div>
+    </AuthLayout>
   );
 }
