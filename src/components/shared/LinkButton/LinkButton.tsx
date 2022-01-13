@@ -41,8 +41,7 @@ export default function LinkButton({
       {icon && (
         <SVGIcon
           icon={icon}
-          width={20}
-          height={20}
+          size={20}
           color={iconColor && COLOR[iconColor]}
           className={`${buttonType === 'fullWidth' ? 'mr-4' : 'mr-2'}`}
         />

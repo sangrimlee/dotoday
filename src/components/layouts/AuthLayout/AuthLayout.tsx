@@ -39,11 +39,12 @@ export default function AuthLayout({
       icon: 'LockIcon',
     },
   ];
+
   return (
     <div className="full-w px-4 md:max-w-lg mx-auto animate-fade-in">
       <div className="mb-12 mt-10 md:mt-20">
         <Link className="flex flex-row justify-center items-center" to="/">
-          <SVGIcon icon="LogoLightIcon" width="48" height="48" />
+          <SVGIcon icon="LogoLightIcon" size={48} />
           <h1 className="text-4xl logo ml-2">DoToday</h1>
         </Link>
       </div>
@@ -59,7 +60,7 @@ export default function AuthLayout({
           {authMenuItems.map(({ label, to, icon }, index) => (
             <li className="auth-menu-item" key={index}>
               <Link to={PAGE_URL[to]}>
-                <SVGIcon icon={icon} width="14" height="14" className="mr-2" />
+                <SVGIcon icon={icon} size={14} className="mr-2" />
                 {label}
               </Link>
             </li>

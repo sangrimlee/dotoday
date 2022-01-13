@@ -43,15 +43,14 @@ export default function Button({
     >
       {isLoading ? (
         <div className="flex">
-          <SVGIcon icon="LoadingIcon" width={24} height={24} />
+          <SVGIcon icon="LoadingIcon" size={24} />
         </div>
       ) : (
         <>
           {icon && (
             <SVGIcon
               icon={icon}
-              width={20}
-              height={20}
+              size={20}
               color={iconColor && COLOR[iconColor]}
               className={`${buttonType === 'fullWidth' ? 'mr-4' : 'mr-2'}`}
             />

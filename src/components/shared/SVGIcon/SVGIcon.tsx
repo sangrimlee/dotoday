@@ -7,10 +7,19 @@ export const iconTypes = Object.keys(icons) as IconType[];
 
 interface SVGIconProps extends React.SVGProps<SVGSVGElement> {
   icon: IconType;
+  size?: number;
 }
 
-export default function SVGIcon({ icon, ...props }: SVGIconProps) {
+export default function SVGIcon({
+  size = 16,
+  icon,
+  width,
+  height,
+  ...props
+}: SVGIconProps) {
   const SVGComponent = icons[icon];
 
-  return <SVGComponent {...props} />;
+  return (
+    <SVGComponent width={width ?? size} height={height ?? size} {...props} />
+  );
 }
