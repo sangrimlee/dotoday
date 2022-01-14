@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageURL, PAGE_URL } from '@/constants/url';
 import { IconType, SVGIcon } from '@/components/shared/SVGIcon';
+import { Logo } from '@/components/shared/Logo';
+import { DarkMode } from '@/components/shared/DarkMode';
 
 interface AuthLayoutProps {
   title?: string;
@@ -43,10 +45,7 @@ export default function AuthLayout({
   return (
     <div className="full-w px-4 md:max-w-lg mx-auto animate-fade-in">
       <div className="mb-12 mt-10 md:mt-20">
-        <Link className="flex flex-row justify-center items-center" to="/">
-          <SVGIcon icon="LogoLightIcon" size={48} />
-          <h1 className="text-4xl logo ml-2">DoToday</h1>
-        </Link>
+        <Logo variant="large" />
       </div>
       <div>
         <div className="mb-4">
@@ -67,6 +66,7 @@ export default function AuthLayout({
           ))}
         </ul>
       )}
+      <DarkMode />
     </div>
   );
 }

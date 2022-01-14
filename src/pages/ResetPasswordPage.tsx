@@ -82,16 +82,18 @@ export default function ResetPasswordPage() {
       <form className="grid gap-2" onSubmit={handleSubmit(onSubmit)}>
         <AuthInput
           type="password"
-          label="비밀번호"
+          label="새 비밀번호"
           errorMessage={errors.password?.message}
           required
+          placeholder="새로운 비밀번호를 입력하세요."
           {...register('password')}
         />
         <AuthInput
           type="password"
-          label="비밀번호 확인"
+          label="새 비밀번호 확인"
           errorMessage={errors.passwordConfirm?.message}
           required
+          placeholder="다시 한 번 비밀번호를 입력하세요."
           {...register('passwordConfirm')}
         />
         <Button

@@ -77,6 +77,7 @@ export default function FindPasswordPage() {
           label="이메일"
           errorMessage={errors.email?.message}
           required
+          placeholder="가입에 사용한 이메일을 입력하세요."
           {...register('email')}
         />
         <Button

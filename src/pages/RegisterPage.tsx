@@ -41,6 +41,7 @@ export default function RegisterPage() {
           label="이메일"
           errorMessage={errors.email?.message}
           required
+          placeholder="이메일을 입력하세요."
           {...register('email')}
         />
         <AuthInput
@@ -48,6 +49,7 @@ export default function RegisterPage() {
           label="비밀번호"
           errorMessage={errors.password?.message}
           required
+          placeholder="비밀번호를 입력하세요."
           {...register('password')}
         />
         <AuthInput
@@ -55,6 +57,7 @@ export default function RegisterPage() {
           label="비밀번호 확인"
           errorMessage={errors.passwordConfirm?.message}
           required
+          placeholder="다시 한 번 비밀번호를 입력하세요."
           {...register('passwordConfirm')}
         />
         <Button

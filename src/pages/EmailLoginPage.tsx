@@ -21,16 +21,10 @@ export default function EmailLoginPage() {
     mode: 'onChange',
     resolver: yupResolver(SCHEMA.LOGIN),
   });
-  const { login } = useAuthContext();
   const { mutate, isLoading, error } = useAuthSignInWithEmailAndPassword(auth);
 
   const onSubmit = ({ email, password }: LoginSchema) => {
-    mutate(
-      { email, password },
-      {
-        onSuccess: (userCredential) => login(userCredential.user),
-      },
-    );
+    mutate({ email, password });
   };
 
   return (
@@ -42,12 +36,14 @@ export default function EmailLoginPage() {
           label="이메일"
           errorMessage={errors.email?.message}
           required
+          placeholder="이메일을 입력하세요."
           {...register('email')}
         />
         <AuthInput
           type="password"
           label="비밀번호"
           errorMessage={errors.password?.message}
+          placeholder="비밀번호를 입력하세요."
           required
           {...register('password')}
         />

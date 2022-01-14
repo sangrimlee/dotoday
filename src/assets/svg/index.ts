@@ -7,3 +7,5 @@ export { default as LockIcon } from './lock.svg';
 export { default as LoadingIcon } from './loading.svg';
 export { default as AlertCircleIcon } from './alert-circle.svg';
 export { default as DocIcon } from './doc.svg';
+export { default as SunnyIcon } from './sunny.svg';
+export { default as MoonIcon } from './moon.svg';
