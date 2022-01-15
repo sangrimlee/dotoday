@@ -8,7 +8,7 @@ import {
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ResetPasswordSchema, SCHEMA } from '@/constants/schema';
+import { SCHEMA } from '@/constants/schema';
 import { PAGE_URL } from '@/constants/url';
 
 import { Button } from '@/components/shared/Button';
@@ -19,8 +19,9 @@ import { AuthLayout } from '@/components/layouts/AuthLayout';
 import useAlert from '@/hooks/useAlert';
 import useToggle from '@/hooks/useToggle';
 import useSearchParams from '@/hooks/useSearchParams';
-import { getFirebaseErrorMessage } from '@/constants/message';
 import LandingPage from './LandingPage';
+import { ResetPasswordSchema } from '@/types';
+import { getFirebaseErrorMessage } from '@/utils/message';
 
 export default function ResetPasswordPage() {
   const history = useHistory();

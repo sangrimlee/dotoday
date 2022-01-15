@@ -1,7 +1,8 @@
 import React, { AnchorHTMLAttributes } from 'react';
 import { Link } from 'react-router-dom';
 import { IconType, SVGIcon } from '../SVGIcon';
-import { COLOR, ColorType } from '@/constants/theme';
+import { COLOR } from '@/constants/theme';
+import { ColorType } from '@/types';
 
 interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;

@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconType, SVGIcon } from '../SVGIcon';
-import { COLOR, ColorType } from '@/constants/theme';
+import { COLOR } from '@/constants/theme';
+import { ColorType } from '@/types';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   buttonType?: 'block' | 'fullWidth';

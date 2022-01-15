@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageURL, PAGE_URL } from '@/constants/url';
+import { PAGE_URL } from '@/constants/url';
 import { IconType, SVGIcon } from '@/components/shared/SVGIcon';
 import { Logo } from '@/components/shared/Logo';
 import { DarkMode } from '@/components/shared/DarkMode';
+import { PageURLType } from '@/types';
 
 interface AuthLayoutProps {
   title?: string;
@@ -14,7 +15,7 @@ interface AuthLayoutProps {
 
 interface AuthMenuItem {
   label: string;
-  to: PageURL;
+  to: PageURLType;
   icon: IconType;
 }
 

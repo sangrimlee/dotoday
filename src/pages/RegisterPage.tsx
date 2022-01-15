@@ -3,13 +3,14 @@ import { auth } from '@/firebase';
 import { useAuthCreateUserWithEmailAndPassword } from '@react-query-firebase/auth';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { RegisterSchema, SCHEMA } from '@/constants/schema';
+import { SCHEMA } from '@/constants/schema';
 
 import { Button } from '@/components/shared/Button';
 import { AuthInput } from '@/components/shared/AuthInput';
 import { AuthError } from '@/components/shared/AuthError';
 import { AuthLayout } from '@/components/layouts/AuthLayout';
-import { getFirebaseErrorMessage } from '@/constants/message';
+import { getFirebaseErrorMessage } from '@/utils/message';
+import { RegisterSchema } from '@/types';
 
 export default function RegisterPage() {
   const {

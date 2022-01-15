@@ -6,5 +6,3 @@ export const PAGE_URL = {
   RESET_PASSWORD: '/reset-password',
   APP: '/app',
 };
-
-export type PageURL = keyof typeof PAGE_URL;

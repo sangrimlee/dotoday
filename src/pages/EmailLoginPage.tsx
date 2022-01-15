@@ -3,14 +3,14 @@ import { auth } from '@/firebase';
 import { useAuthSignInWithEmailAndPassword } from '@react-query-firebase/auth';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { LoginSchema, SCHEMA } from '@/constants/schema';
+import { SCHEMA } from '@/constants/schema';
 
 import { Button } from '@/components/shared/Button';
 import { AuthInput } from '@/components/shared/AuthInput';
 import { AuthError } from '@/components/shared/AuthError';
 import { AuthLayout } from '@/components/layouts/AuthLayout';
-import { getFirebaseErrorMessage } from '@/constants/message';
-import { useAuthContext } from '@/contexts/AuthContext';
+import { LoginSchema } from '@/types';
+import { getFirebaseErrorMessage } from '@/utils/message';
 
 export default function EmailLoginPage() {
   const {

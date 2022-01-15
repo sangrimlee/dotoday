@@ -3,7 +3,7 @@ import { auth } from '@/firebase';
 import { useAuthSendPasswordResetEmail } from '@react-query-firebase/auth';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FindPasswordSchema, SCHEMA } from '@/constants/schema';
+import { SCHEMA } from '@/constants/schema';
 import { PAGE_URL } from '@/constants/url';
 
 import { Button } from '@/components/shared/Button';
@@ -13,7 +13,8 @@ import { AuthError } from '@/components/shared/AuthError';
 import { AuthLayout } from '@/components/layouts/AuthLayout';
 
 import useToggle from '@/hooks/useToggle';
-import { getFirebaseErrorMessage } from '@/constants/message';
+import { FindPasswordSchema } from '@/types';
+import { getFirebaseErrorMessage } from '@/utils/message';
 
 export default function FindPasswordPage() {
   const [isEmailSent, setIsEmailSent] = useToggle();

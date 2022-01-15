@@ -5,16 +5,3 @@ export const FIREBASE_ERROR_MESSAGE = {
   ['auth/wrong-password']: '로그인 정보를 다시 한 번 확인해주세요.',
   ['auth/user-not-found']: '일치하는 사용자 정보를 찾을 수 없습니다.',
 };
-
-export type FirebaseErrorCode = keyof typeof FIREBASE_ERROR_MESSAGE;
-
-export const isFirebaseErrorCode = (
-  errorCode: string,
-): errorCode is FirebaseErrorCode => errorCode in FIREBASE_ERROR_MESSAGE;
-
-export const getFirebaseErrorMessage = (errorCode: string) => {
-  if (isFirebaseErrorCode(errorCode)) {
-    return FIREBASE_ERROR_MESSAGE[errorCode];
-  }
-  return UNKNOWN_ERROR_MESSAGE;
-};
