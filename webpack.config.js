@@ -47,9 +47,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    compress: true,
     historyApiFallback: true,
-    open: true,
+    hot: true,
     port: 3000,
   },
   optimization: {

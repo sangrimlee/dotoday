@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '@/firebase';
 import { useAuthSignInWithEmailAndPassword } from '@react-query-firebase/auth';
 import { useForm } from 'react-hook-form';
@@ -11,20 +12,27 @@ import { AuthError } from '@/components/shared/AuthError';
 import { AuthLayout } from '@/components/layouts/AuthLayout';
 import { LoginSchema } from '@/types';
 import { getFirebaseErrorMessage } from '@/utils/message';
+import { PAGE_URL } from '@/constants/url';
 
 export default function EmailLoginPage() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm({
+  } = useForm<LoginSchema>({
     mode: 'onChange',
     resolver: yupResolver(SCHEMA.LOGIN),
   });
   const { mutate, isLoading, error } = useAuthSignInWithEmailAndPassword(auth);
 
   const onSubmit = ({ email, password }: LoginSchema) => {
-    mutate({ email, password });
+    mutate(
+      { email, password },
+      {
+        onSuccess: () => navigate(PAGE_URL.DASHBOARD, { replace: true }),
+      },
+    );
   };
 
   return (

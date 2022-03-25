@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { auth } from '@/firebase';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   useAuthCheckActionCode,
   useAuthConfirmPasswordReset,
@@ -24,17 +24,17 @@ import { ResetPasswordSchema } from '@/types';
 import { getFirebaseErrorMessage } from '@/utils/message';
 
 export default function ResetPasswordPage() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const searchParams = useSearchParams();
   const [isCodeValid, setIsCodeValid] = useToggle();
   const { mutate: checkActionCode } = useAuthCheckActionCode(auth);
   const onActionCodeInvalid = useAlert({
     message: '인증번호가 만료되었습니다.',
-    onConfirm: () => history.replace(PAGE_URL.FIND_PASSWORD),
+    onConfirm: () => navigate(PAGE_URL.FIND_PASSWORD, { replace: true }),
   });
   const onResetPassword = useAlert({
     message: '비밀번호가 변경되었습니다.',
-    onConfirm: () => history.replace(PAGE_URL.EMAIL_LOGIN),
+    onConfirm: () => navigate(PAGE_URL.EMAIL_LOGIN, { replace: true }),
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function ResetPasswordPage() {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm({
+  } = useForm<ResetPasswordSchema>({
     mode: 'onChange',
     resolver: yupResolver(SCHEMA.RESET_PASSWORD),
   });

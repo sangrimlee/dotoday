@@ -22,7 +22,7 @@ export default function FindPasswordPage() {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm({
+  } = useForm<FindPasswordSchema>({
     mode: 'onChange',
     resolver: yupResolver(SCHEMA.FIND_PASSWORD),
   });

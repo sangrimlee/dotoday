@@ -1,25 +1,20 @@
 import React from 'react';
-import useScreenType from '@/hooks/useScreenType';
 import { SVGIcon } from '@/components/shared/SVGIcon';
-import { useTheme } from '@/contexts/ThemeContext';
+import { useThemeContext } from '@/contexts/ThemeContext';
 
 export default function LandingPage() {
-  const { theme } = useTheme();
-  const { height } = useScreenType();
+  const { theme } = useThemeContext();
   return (
-    <div
-      style={{ height: `${height}px` }}
-      className="w-full flex items-center justify-center overflow-hidden"
-    >
-      <div className="flex items-center">
+    <div className="relative h-full w-full animate-fade-in">
+      <div className="absolute top-1/2 inset-x-0 -translate-y-1/2">
         <SVGIcon
           icon={`${theme === 'light' ? 'LogoLightIcon' : 'LogoDarkIcon'}`}
           size={64}
-          className="animate-landing-logo"
+          className="animate-bounce mx-auto"
         />
-        <h1 className="logo text-5xl ml-4 animate-landing-logo-text">
-          DoToday
-        </h1>
+      </div>
+      <div className="absolute bottom-8 inset-x-0">
+        <h1 className="logo text-2xl text-inactive text-center">DoToday</h1>
       </div>
     </div>
   );

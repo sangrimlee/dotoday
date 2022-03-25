@@ -21,36 +21,22 @@ module.exports = {
     extend: {
       keyframes: {
         fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
-        landingLogo: {
-          '0%': {
-            opacity: 0,
-            transform: 'translateX(6.5rem) scale(0)',
-          },
-          '50%': {
-            opacity: 1,
-            transform: 'translateX(6.5rem) scale(1)',
-          },
-          '100%': {
-            transform: 'translateX(0)',
-          },
-        },
-        landingLogoText: {
-          '0%': {
-            opacity: 0,
-          },
-          '50%': { opacity: 0, transform: 'translateX(6.5rem)' },
-          '100%': { opacity: 1 },
+        fadeOut: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
         },
       },
       animation: {
-        'fade-in': 'fadeIn 0.25s ease-in',
-        'landing-logo': 'landingLogo 1.25s ease',
-        'landing-logo-text': 'landingLogoText 1.25s ease',
+        'fade-in': 'fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+        'fade-out': 'fadeOut 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
+  variants: {
+    scrollbar: ['dark', 'rounded'],
+  },
 };

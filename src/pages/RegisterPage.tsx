@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '@/firebase';
 import { useAuthCreateUserWithEmailAndPassword } from '@react-query-firebase/auth';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SCHEMA } from '@/constants/schema';
+import { PAGE_URL } from '@/constants/url';
 
 import { Button } from '@/components/shared/Button';
 import { AuthInput } from '@/components/shared/AuthInput';
@@ -13,11 +15,12 @@ import { getFirebaseErrorMessage } from '@/utils/message';
 import { RegisterSchema } from '@/types';
 
 export default function RegisterPage() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm({
+  } = useForm<RegisterSchema>({
     mode: 'onChange',
     resolver: yupResolver(SCHEMA.REGISTER),
   });
@@ -28,7 +31,7 @@ export default function RegisterPage() {
     mutate(
       { email, password },
       {
-        onSuccess: (data) => console.log(data),
+        onSuccess: () => navigate(PAGE_URL.EMAIL_LOGIN, { replace: true }),
       },
     );
   };

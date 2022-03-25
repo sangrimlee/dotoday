@@ -8,16 +8,19 @@ export const getDeviceTheme = (): ThemeType =>
 export const getDefaultTheme = () => {
   const storageTheme = getLocalStorage('THEME');
   const deviceTheme = getDeviceTheme();
-  const defaultTheme: ThemeType = isThemeType(storageTheme)
-    ? storageTheme
-    : deviceTheme;
-  return defaultTheme;
+  if (isThemeType(storageTheme)) {
+    return storageTheme;
+  }
+  return deviceTheme;
 };
 
 export const switchTheme = (theme: ThemeType) =>
   theme === 'light' ? 'dark' : 'light';
 
 export const addThemeClass = (theme: ThemeType) => {
-  document.documentElement.classList.remove(theme);
-  document.documentElement.classList.add(switchTheme(theme));
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
 };

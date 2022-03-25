@@ -23,22 +23,22 @@ export const ThemeContext = createContext<ThemeState>({
   toggleTheme: () => {},
 });
 
-export const useTheme = () => useContext(ThemeContext);
+export const useThemeContext = () => useContext(ThemeContext);
 
 export default function ThemeProvider({ children }: Props) {
   const [theme, setTheme] = useState<ThemeType>('light');
 
   const toggleTheme = useCallback(() => {
     const switchedTheme = switchTheme(theme);
-    setTheme(switchedTheme);
-    addThemeClass(switchedTheme);
     setLocalStorage('THEME', switchedTheme);
+    addThemeClass(switchedTheme);
+    setTheme(switchedTheme);
   }, [theme]);
 
   useEffect(() => {
     const defaultTheme = getDefaultTheme();
-    setTheme(defaultTheme);
     addThemeClass(defaultTheme);
+    setTheme(defaultTheme);
   }, []);
 
   return (
