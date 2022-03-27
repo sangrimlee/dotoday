@@ -24,18 +24,23 @@ type LogoVariantType = keyof typeof LogoVariant;
 interface LogoProps {
   variant?: LogoVariantType;
   logoType?: LogoType;
+  className?: string;
 }
 
 export default function Logo({
   variant = 'default',
   logoType = 'default',
+  className,
 }: LogoProps) {
   const { theme } = useThemeContext();
 
   const logoIconType = theme === 'light' ? 'LogoLightIcon' : 'LogoDarkIcon';
 
   return (
-    <Link className="inline-flex items-center justify-center" to="/">
+    <Link
+      className={`inline-flex items-center justify-center ${className}`}
+      to="/"
+    >
       {logoType !== 'text' && (
         <SVGIcon size={LogoVariant[variant].logoSize} icon={logoIconType} />
       )}
