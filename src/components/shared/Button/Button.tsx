@@ -4,7 +4,7 @@ import { COLOR } from '@/constants/theme';
 import { ColorType } from '@/types';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  buttonType?: 'block' | 'fullWidth';
+  buttonType?: 'block' | 'fullWidth' | 'small';
   buttonColor?: 'default' | 'brand';
   icon?: IconType;
   iconColor?: ColorType;
@@ -19,6 +19,7 @@ const ButtonColor = {
 const ButtonType = {
   block: 'btn-block',
   fullWidth: 'btn-full',
+  small: 'btn-small',
 };
 
 export default function Button({

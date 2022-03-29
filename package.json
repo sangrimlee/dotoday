@@ -13,12 +13,15 @@
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
     "@react-query-firebase/auth": "^0.3.4",
+    "@react-query-firebase/firestore": "^0.4.2",
     "firebase": "^9.6.9",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.28.1",
     "react-query": "^3.34.16",
     "react-router-dom": "^6.2.2",
+    "react-textarea-autosize": "^8.3.3",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -29,6 +32,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime": "^7.17.8",
     "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/forms": "^0.5.0",
     "@types/react": "^17.0.41",
     "@types/react-dom": "^17.0.14",
     "autoprefixer": "^10.4.4",

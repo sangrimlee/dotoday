@@ -9,13 +9,13 @@
   html,
   body,
   .root {
-    @apply bg-white text-neutral-900 dark:bg-neutral-800 dark:text-white h-full w-full flex flex-col relative;
+    @apply bg-white text-neutral-900 dark:bg-neutral-800 dark:text-white h-full w-full flex flex-col relative overflow-hidden;
   }
   .logo {
     @apply font-logo font-extrabold tracking-tight;
   }
   .text-secondary {
-    @apply text-neutral-600 dark:text-neutral-400;
+    @apply text-neutral-400 dark:text-neutral-300;
   }
   .text-inactive {
     @apply text-neutral-300 dark:text-neutral-400;
@@ -55,7 +55,7 @@
     @apply font-medium disabled:opacity-30 disabled:pointer-events-none;
   }
   .btn-default {
-    @apply border bg-white text-black dark:text-white border-neutral-200 dark:bg-neutral-900 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700;
+    @apply border bg-white text-black dark:text-white border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-700;
   }
   .btn-brand {
     @apply bg-brand text-white hover:opacity-75;
@@ -66,13 +66,16 @@
   .btn-block {
     @apply px-4 py-3 rounded-md;
   }
+  .btn-small {
+    @apply px-3 py-2 rounded-md text-sm;
+  }
 
   /* Dashboard Layout */
   .dashboard-wrap {
     @apply h-full w-full flex flex-col md:flex-row;
   }
   .dashboard-main {
-    @apply flex-1 bg-neutral-100 dark:bg-neutral-900;
+    @apply flex-1 bg-neutral-50 dark:bg-neutral-900;
   }
   .nav-item {
     @apply hover:text-brand dark:hover:text-brand text-neutral-300 dark:text-neutral-400 transition-all;
@@ -88,7 +91,7 @@
     @apply w-full h-full py-8 flex flex-col items-center;
   }
   .sidebar-nav {
-    @apply w-full h-full flex flex-col justify-between scrollbar;
+    @apply w-full h-full flex flex-col justify-between scrollbar-none;
   }
   .sidebar-menu {
     @apply flex flex-1 flex-col items-center;
@@ -129,6 +132,35 @@
   }
   .bottom-item {
     @apply h-full flex items-center justify-center;
+  }
+
+  .add-task-btn {
+    @apply w-full h-12 flex items-center justify-center rounded-lg bg-neutral-200 dark:bg-neutral-900 text-neutral-400 dark:text-neutral-600 hover:opacity-50 transition-all;
+  }
+  .task-editor-editing-wrap {
+    @apply w-full p-4 mb-4 rounded-lg bg-white dark:bg-neutral-700 text-black dark:text-white focus-within:ring-2 focus-within:ring-brand transition-colors;
+  }
+  .task-editor-input {
+    @apply w-full resize-none bg-transparent focus:outline-none max-h-48;
+  }
+  .task-editor-title {
+    @apply mb-3;
+  }
+  .task-editor-desc {
+    @apply text-sm text-secondary;
+  }
+  .task-editor-form-actions {
+    @apply flex;
+  }
+  .task-editor-form-actions > button {
+    @apply mr-2 last:mr-0;
+  }
+
+  .task-list {
+    @apply flex flex-col items-center;
+  }
+  .task-list > li {
+    @apply w-full mb-4 last:mb-0;
   }
 }
 

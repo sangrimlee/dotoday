@@ -16,3 +16,5 @@ export { default as ChartIcon } from './chart.svg';
 export { default as ProjectIcon } from './project.svg';
 export { default as HomeIcon } from './home.svg';
 export { default as LoadingCircleIcon } from './loading-circle.svg';
+export { default as AddIcon } from './add.svg';
+export { default as CheckIcon } from './check.svg';
